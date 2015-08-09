@@ -17,6 +17,15 @@
 		D66B68271B76D4E500C80B26 /* SmartKey.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D66B681F1B76D4E500C80B26 /* SmartKey.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		D66B682F1B76D84800C80B26 /* CustomKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66B682E1B76D84800C80B26 /* CustomKey.swift */; };
 		D66B68311B77033500C80B26 /* LetterKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66B68301B77033500C80B26 /* LetterKey.swift */; };
+		D69921221B77DC8A0048D907 /* SpaceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69921211B77DC8A0048D907 /* SpaceKey.swift */; };
+		D69921241B77E3990048D907 /* ReturnKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69921231B77E3990048D907 /* ReturnKey.swift */; };
+		D69921261B77E8ED0048D907 /* SmartKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69921251B77E8ED0048D907 /* SmartKey.swift */; };
+		D69921281B77EA9D0048D907 /* NextKeyboardKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69921271B77EA9D0048D907 /* NextKeyboardKey.swift */; };
+		D699212A1B77ECE80048D907 /* SwitchToNumericKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69921291B77ECE80048D907 /* SwitchToNumericKey.swift */; };
+		D699212C1B77EF7C0048D907 /* SwitchToAlphabeticKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D699212B1B77EF7C0048D907 /* SwitchToAlphabeticKey.swift */; };
+		D699212E1B77F0380048D907 /* SwitchToSymbolsKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D699212D1B77F0380048D907 /* SwitchToSymbolsKey.swift */; };
+		D69921301B77F15C0048D907 /* ShiftUpKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D699212F1B77F15C0048D907 /* ShiftUpKey.swift */; };
+		D69921321B77F1720048D907 /* ShiftDownKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69921311B77F1720048D907 /* ShiftDownKey.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +75,15 @@
 		D66B68231B76D4E500C80B26 /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
 		D66B682E1B76D84800C80B26 /* CustomKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomKey.swift; sourceTree = "<group>"; };
 		D66B68301B77033500C80B26 /* LetterKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LetterKey.swift; sourceTree = "<group>"; };
+		D69921211B77DC8A0048D907 /* SpaceKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpaceKey.swift; sourceTree = "<group>"; };
+		D69921231B77E3990048D907 /* ReturnKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReturnKey.swift; sourceTree = "<group>"; };
+		D69921251B77E8ED0048D907 /* SmartKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SmartKey.swift; sourceTree = "<group>"; };
+		D69921271B77EA9D0048D907 /* NextKeyboardKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextKeyboardKey.swift; sourceTree = "<group>"; };
+		D69921291B77ECE80048D907 /* SwitchToNumericKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchToNumericKey.swift; sourceTree = "<group>"; };
+		D699212B1B77EF7C0048D907 /* SwitchToAlphabeticKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchToAlphabeticKey.swift; sourceTree = "<group>"; };
+		D699212D1B77F0380048D907 /* SwitchToSymbolsKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchToSymbolsKey.swift; sourceTree = "<group>"; };
+		D699212F1B77F15C0048D907 /* ShiftUpKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShiftUpKey.swift; sourceTree = "<group>"; };
+		D69921311B77F1720048D907 /* ShiftDownKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShiftDownKey.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +173,15 @@
 			isa = PBXGroup;
 			children = (
 				D66B68231B76D4E500C80B26 /* KeyboardViewController.swift */,
+				D699212F1B77F15C0048D907 /* ShiftUpKey.swift */,
+				D69921311B77F1720048D907 /* ShiftDownKey.swift */,
+				D69921251B77E8ED0048D907 /* SmartKey.swift */,
+				D69921211B77DC8A0048D907 /* SpaceKey.swift */,
+				D69921271B77EA9D0048D907 /* NextKeyboardKey.swift */,
+				D69921291B77ECE80048D907 /* SwitchToNumericKey.swift */,
+				D699212B1B77EF7C0048D907 /* SwitchToAlphabeticKey.swift */,
+				D699212D1B77F0380048D907 /* SwitchToSymbolsKey.swift */,
+				D69921231B77E3990048D907 /* ReturnKey.swift */,
 				D66B682E1B76D84800C80B26 /* CustomKey.swift */,
 				D66B68301B77033500C80B26 /* LetterKey.swift */,
 				D66B68211B76D4E500C80B26 /* Supporting Files */,
@@ -317,9 +344,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D69921281B77EA9D0048D907 /* NextKeyboardKey.swift in Sources */,
 				D66B68311B77033500C80B26 /* LetterKey.swift in Sources */,
+				D69921241B77E3990048D907 /* ReturnKey.swift in Sources */,
 				D66B682F1B76D84800C80B26 /* CustomKey.swift in Sources */,
+				D69921321B77F1720048D907 /* ShiftDownKey.swift in Sources */,
+				D699212C1B77EF7C0048D907 /* SwitchToAlphabeticKey.swift in Sources */,
+				D699212A1B77ECE80048D907 /* SwitchToNumericKey.swift in Sources */,
+				D69921261B77E8ED0048D907 /* SmartKey.swift in Sources */,
+				D69921221B77DC8A0048D907 /* SpaceKey.swift in Sources */,
+				D699212E1B77F0380048D907 /* SwitchToSymbolsKey.swift in Sources */,
 				D66B68241B76D4E500C80B26 /* KeyboardViewController.swift in Sources */,
+				D69921301B77F15C0048D907 /* ShiftUpKey.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

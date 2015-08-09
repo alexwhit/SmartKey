@@ -1,18 +1,19 @@
 //
-//  LetterKey.swift
+//  SwitchToNumericKey.swift
 //  SmartKey App
 //
-//  Created by Alex Whitaker on 8/8/15.
+//  Created by Alex Whitaker on 8/9/15.
 //  Copyright (c) 2015 Alex Whitaker. All rights reserved.
 //
 
 import UIKit
 
-class LetterKey : CustomKey {
+class SwitchToNumericKey : CustomKey {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.action = "letterPressed:"
+        self.setTitle("123", forState: .Normal)
+        self.action = "switchToNumeric:"
     }
     
     required init(coder aDecoder: NSCoder) {
