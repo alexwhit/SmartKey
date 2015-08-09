@@ -12,6 +12,7 @@ class KeyboardViewController: UIInputViewController {
     
     var currentPageType : PageType = PageType.Uppercase
     var savedAlphabeticState : PageType = PageType.Uppercase
+    var capsLock : Bool = false;
     
     enum PageType {
         case Lowercase
@@ -41,35 +42,37 @@ class KeyboardViewController: UIInputViewController {
     
     // creates a page of keys, given the page type as defined by an enum
     func createKeyboardPage(pageType : PageType) {
+        view.subviews.map({ $0.removeFromSuperview() })
+        
         var firstRowButtonTitles : [String] = []
         var secondRowButtonTitles :  [String] = []
         var thirdRowButtonTitles : [String] = []
         var bottomRowButtonTitles : [String] = []
         
         switch pageType {
-        case PageType.Lowercase:
-            firstRowButtonTitles = ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"]
-            secondRowButtonTitles = ["A", "S", "D", "F", "G", "H", "J", "K", "L", "smart"]
-            thirdRowButtonTitles = ["shiftUp", "Z", "X", "C", "V", "B", "N", "M", "backspace"]
-            bottomRowButtonTitles = ["numeric", "nextkeyboard", "microphone", "space", "return"]
-            break
         case PageType.Uppercase:
-            firstRowButtonTitles = ["q", "w", "e", "r", "t", "y", "u", "i", "o", "p"]
-            secondRowButtonTitles = ["a", "s", "d", "f", "g", "h", "j", "k", "l", "smart"]
-            thirdRowButtonTitles = ["shiftDown", "z", "x", "c", "v", "b", "n", "m", "backspace"]
-            bottomRowButtonTitles = ["numeric", "nextkeyboard", "microphone", "space", "return"]
+            firstRowButtonTitles = ["Q", "SP", "W","SP", "E","SP", "R","SP", "T","SP", "Y","SP", "U","SP", "I","SP", "O","SP","P"]
+            secondRowButtonTitles = ["A","SP", "S","SP", "D","SP", "F","SP", "G","SP", "H","SP", "J","SP", "K","SP", "L","SP", "smart"]
+            thirdRowButtonTitles = ["shiftDown","SP","SP", "Z","SP", "X","SP", "C","SP", "V","SP", "B","SP", "N","SP", "M","SP","SP", "backspace"]
+            bottomRowButtonTitles = ["numeric","SP", "nextkeyboard","SP", "microphone","SP", "space","SP", "return"]
+            break
+        case PageType.Lowercase:
+            firstRowButtonTitles = ["q","SP", "w","SP", "e","SP", "r","SP", "t","SP", "y","SP", "u","SP", "i","SP", "o","SP", "p"]
+            secondRowButtonTitles = ["a","SP", "s","SP", "d","SP", "f","SP", "g","SP", "h","SP", "j","SP", "k","SP", "l","SP", "smart"]
+            thirdRowButtonTitles = ["shiftUp","SP","SP", "z","SP", "x","SP", "c","SP", "v","SP", "b","SP", "n","SP", "m","SP","SP", "backspace"]
+            bottomRowButtonTitles = ["numeric","SP", "nextkeyboard","SP", "microphone","SP", "space","SP", "return"]
             break
         case PageType.Numeric:
-            firstRowButtonTitles = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
-            secondRowButtonTitles = ["-", "/", ":", ";", "(", ")", "$", "&", "@", "\u{0022}"]
-            thirdRowButtonTitles = ["symbols", ".", ",", "?", "!", "'", "backspace"]
-            bottomRowButtonTitles = ["alphabetic", "nextkeyboard", "microphone", "space", "return"]
+            firstRowButtonTitles = ["1","SP", "2","SP", "3","SP", "4","SP", "5","SP", "6","SP", "7","SP", "8","SP", "9","SP", "0"]
+            secondRowButtonTitles = ["-","SP", "/","SP", ":","SP", ";","SP", "(","SP", ")","SP", "$","SP", "&","SP", "@","SP", "\u{0022}"]
+            thirdRowButtonTitles = ["symbols","SP","SP", ".","SP", ",","SP", "?","SP", "!","SP", "'","SP", "SP","backspace"]
+            bottomRowButtonTitles = ["alphabetic","SP", "nextkeyboard","SP", "microphone","SP", "space","SP", "return"]
             break
         case PageType.Symbols:
-            firstRowButtonTitles = ["[", "]", "{", "}", "#", "%", "^", "*", "+", "="]
-            secondRowButtonTitles = ["_", "\u{005C}", "|", "~", "<", ">", "\u{20AC}", "\u{00A3}", "\u{00A5}", "\u{25CF}"]
-            thirdRowButtonTitles = ["numeric", ".", ",", "?", "!", "'", "backspace"]
-            bottomRowButtonTitles = ["alphabetic", "nextkeyboard", "microphone", "space", "return"]
+            firstRowButtonTitles = ["[","SP", "]","SP", "{","SP", "}","SP", "#","SP", "%","SP", "^","SP", "*","SP", "+","SP", "="]
+            secondRowButtonTitles = ["_","SP", "\u{005C}","SP", "|","SP", "~","SP", "<","SP", ">","SP", "\u{20AC}","SP", "\u{00A3}","SP", "\u{00A5}","SP", "\u{25CF}"]
+            thirdRowButtonTitles = ["numeric","SP","SP", ".","SP", ",","SP", "?","SP", "!","SP", "'","SP","SP", "backspace"]
+            bottomRowButtonTitles = ["alphabetic","SP", "nextkeyboard", "SP","microphone","SP", "space","SP", "return"]
             break
         default:
             break
@@ -98,11 +101,17 @@ class KeyboardViewController: UIInputViewController {
             var button : CustomKey = CustomKey.buttonWithType(.Custom) as! CustomKey
             
             switch title {
+            case "SP":
+                button = Spacer.buttonWithType(.Custom) as! Spacer
+                break
             case "space":
                 button = SpaceKey.buttonWithType(.Custom) as! SpaceKey
                 break
             case "return":
                 button = ReturnKey.buttonWithType(.Custom) as! ReturnKey
+                break
+            case "backspace":
+                button = BackspaceKey.buttonWithType(.Custom) as! BackspaceKey
                 break
             case "shiftUp":
                 button = ShiftUpKey.buttonWithType(.Custom) as! ShiftUpKey
@@ -133,16 +142,14 @@ class KeyboardViewController: UIInputViewController {
         }
         
         // Add the buttons and row of buttons to the keyboard
-        var row = UIView(frame: CGRectMake(CGFloat(0), CGFloat(6 + (51 * (rowNumber - 1))), screenWidth, CGFloat(43)))
+        var row = UIView(frame: CGRectMake(CGFloat(3), CGFloat(6 + (53 * (rowNumber - 1))), screenWidth, CGFloat(46)))
         for button in buttons {
             row.addSubview(button)
         }
         self.view.addSubview(row)
         addConstraints(buttons, containingView: row)
     }
-    
-    
-    
+        
     
     // Method called when the smart key is pressed
     func smartKeyPressed(sender: AnyObject?) {
@@ -151,13 +158,18 @@ class KeyboardViewController: UIInputViewController {
     
     // Method called when the return key is pressed
     func returnPressed(sender: AnyObject?) {
-        (textDocumentProxy as! UIKeyInput).insertText("\n");
+        (textDocumentProxy as! UIKeyInput).insertText("\n")
     }
     
     
     // Method called when the space bar is pressed
     func spacePressed(sender: AnyObject?) {
-        (textDocumentProxy as! UIKeyInput).insertText(" ");
+        (textDocumentProxy as! UIKeyInput).insertText(" ")
+    }
+    
+    // Method to backspace
+    func backspace(sender: AnyObject?) {
+        (textDocumentProxy as! UIKeyInput).deleteBackward()
     }
     
     // Method to shift to uppercase
@@ -199,6 +211,11 @@ class KeyboardViewController: UIInputViewController {
         let button = sender as! UIButton
         let title = button.titleForState(.Normal)
         (textDocumentProxy as! UIKeyInput).insertText(title!)
+        
+        if (currentPageType == PageType.Uppercase && !capsLock) {
+            currentPageType = PageType.Lowercase
+            createKeyboardPage(currentPageType)
+        }
     }
     
     
@@ -220,13 +237,16 @@ class KeyboardViewController: UIInputViewController {
             }else{
                 
                 leftConstraint = NSLayoutConstraint(item: button, attribute: .Left, relatedBy: .Equal, toItem: buttons[index-1], attribute: .Right, multiplier: 1.0, constant: 1)
-                
-                if let obj = button as? SpaceKey {
-                    var widthConstraint = NSLayoutConstraint(item: buttons[0], attribute: .Width, relatedBy: .Equal, toItem: button, attribute: .Width, multiplier: 0.30, constant: 0)
+                if let obj = button as? Spacer {
+                    var widthConstraint = NSLayoutConstraint(item: buttons[0], attribute: .Width, relatedBy: .Equal, toItem: button, attribute: .Width, multiplier: 10.0, constant: 0)
+                    containingView.addConstraint(widthConstraint)
+                }
+                else if let obj = button as? SpaceKey {
+                    var widthConstraint = NSLayoutConstraint(item: buttons[0], attribute: .Width, relatedBy: .Equal, toItem: button, attribute: .Width, multiplier: 0.28, constant: 0)
                     containingView.addConstraint(widthConstraint)
                 }
                 else if let obj = button as? ReturnKey {
-                    var widthConstraint = NSLayoutConstraint(item: buttons[0], attribute: .Width, relatedBy: .Equal, toItem: button, attribute: .Width, multiplier: 0.60, constant: 0)
+                    var widthConstraint = NSLayoutConstraint(item: buttons[0], attribute: .Width, relatedBy: .Equal, toItem: button, attribute: .Width, multiplier: 0.55, constant: 0)
                     containingView.addConstraint(widthConstraint)
                 }
                 else {
@@ -239,7 +259,7 @@ class KeyboardViewController: UIInputViewController {
             
             if index == buttons.count - 1 {
                 
-                rightConstraint = NSLayoutConstraint(item: button, attribute: .Right, relatedBy: .Equal, toItem: containingView, attribute: .Right, multiplier: 1.0, constant: -1)
+                rightConstraint = NSLayoutConstraint(item: button, attribute: .Right, relatedBy: .Equal, toItem: containingView, attribute: .Right, multiplier: 0.985, constant: -1)
                 
             }else{
                 

@@ -1,5 +1,5 @@
 //
-//  ShiftDownKey.swift
+//  Spacer.swift
 //  SmartKey App
 //
 //  Created by Alex Whitaker on 8/9/15.
@@ -8,16 +8,13 @@
 
 import UIKit
 
-class ShiftDownKey : CustomKey {
-    
+class Spacer : CustomKey {
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.setTitle("\u{21E9}", forState: .Normal)
-        self.action = "shiftDown:"
+        self.backgroundColor = UIColor(white: 0/255, alpha: 0/255);
     }
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
 }
-

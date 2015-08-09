@@ -12,7 +12,7 @@ class ShiftUpKey : CustomKey {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.setTitle("\u{21E9}", forState: .Normal)
+        self.setTitle("\u{21E7}", forState: .Normal)
         self.action = "shiftUp:"
     }
     

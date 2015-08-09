@@ -1,5 +1,5 @@
 //
-//  ShiftDownKey.swift
+//  BackspaceKey.swift
 //  SmartKey App
 //
 //  Created by Alex Whitaker on 8/9/15.
@@ -8,16 +8,14 @@
 
 import UIKit
 
-class ShiftDownKey : CustomKey {
-    
+class BackspaceKey : CustomKey {
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.setTitle("\u{21E9}", forState: .Normal)
-        self.action = "shiftDown:"
+        self.setTitle("\u{232B}", forState: .Normal)
+        self.action = "backspace:"
     }
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
 }
-
