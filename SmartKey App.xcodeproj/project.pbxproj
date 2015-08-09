@@ -16,6 +16,7 @@
 		D66B68241B76D4E500C80B26 /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66B68231B76D4E500C80B26 /* KeyboardViewController.swift */; };
 		D66B68271B76D4E500C80B26 /* SmartKey.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D66B681F1B76D4E500C80B26 /* SmartKey.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		D66B682F1B76D84800C80B26 /* CustomKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66B682E1B76D84800C80B26 /* CustomKey.swift */; };
+		D66B68311B77033500C80B26 /* LetterKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66B68301B77033500C80B26 /* LetterKey.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		D66B68221B76D4E500C80B26 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D66B68231B76D4E500C80B26 /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
 		D66B682E1B76D84800C80B26 /* CustomKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomKey.swift; sourceTree = "<group>"; };
+		D66B68301B77033500C80B26 /* LetterKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LetterKey.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +156,7 @@
 			children = (
 				D66B68231B76D4E500C80B26 /* KeyboardViewController.swift */,
 				D66B682E1B76D84800C80B26 /* CustomKey.swift */,
+				D66B68301B77033500C80B26 /* LetterKey.swift */,
 				D66B68211B76D4E500C80B26 /* Supporting Files */,
 			);
 			path = SmartKey;
@@ -314,6 +317,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D66B68311B77033500C80B26 /* LetterKey.swift in Sources */,
 				D66B682F1B76D84800C80B26 /* CustomKey.swift in Sources */,
 				D66B68241B76D4E500C80B26 /* KeyboardViewController.swift in Sources */,
 			);
@@ -534,6 +538,7 @@
 				D66B68171B76D4C400C80B26 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D66B68181B76D4C400C80B26 /* Build configuration list for PBXNativeTarget "SmartKey AppTests" */ = {
 			isa = XCConfigurationList;
@@ -542,6 +547,7 @@
 				D66B681A1B76D4C400C80B26 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D66B68281B76D4E500C80B26 /* Build configuration list for PBXNativeTarget "SmartKey" */ = {
 			isa = XCConfigurationList;
@@ -550,6 +556,7 @@
 				D66B682A1B76D4E500C80B26 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
