@@ -1,0 +1,557 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D66B67FC1B76D4C400C80B26 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66B67FB1B76D4C400C80B26 /* AppDelegate.swift */; };
+		D66B67FE1B76D4C400C80B26 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66B67FD1B76D4C400C80B26 /* ViewController.swift */; };
+		D66B68011B76D4C400C80B26 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D66B67FF1B76D4C400C80B26 /* Main.storyboard */; };
+		D66B68031B76D4C400C80B26 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D66B68021B76D4C400C80B26 /* Images.xcassets */; };
+		D66B68061B76D4C400C80B26 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D66B68041B76D4C400C80B26 /* LaunchScreen.xib */; };
+		D66B68121B76D4C400C80B26 /* SmartKey_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66B68111B76D4C400C80B26 /* SmartKey_AppTests.swift */; };
+		D66B68241B76D4E500C80B26 /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66B68231B76D4E500C80B26 /* KeyboardViewController.swift */; };
+		D66B68271B76D4E500C80B26 /* SmartKey.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D66B681F1B76D4E500C80B26 /* SmartKey.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		D66B682F1B76D84800C80B26 /* CustomKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66B682E1B76D84800C80B26 /* CustomKey.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D66B680C1B76D4C400C80B26 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D66B67EE1B76D4C400C80B26 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D66B67F51B76D4C400C80B26;
+			remoteInfo = "SmartKey App";
+		};
+		D66B68251B76D4E500C80B26 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D66B67EE1B76D4C400C80B26 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D66B681E1B76D4E500C80B26;
+			remoteInfo = SmartKey;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D66B682B1B76D4E500C80B26 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				D66B68271B76D4E500C80B26 /* SmartKey.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		D66B67F61B76D4C400C80B26 /* SmartKey App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SmartKey App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D66B67FA1B76D4C400C80B26 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D66B67FB1B76D4C400C80B26 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D66B67FD1B76D4C400C80B26 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D66B68001B76D4C400C80B26 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D66B68021B76D4C400C80B26 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		D66B68051B76D4C400C80B26 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		D66B680B1B76D4C400C80B26 /* SmartKey AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SmartKey AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D66B68101B76D4C400C80B26 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D66B68111B76D4C400C80B26 /* SmartKey_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartKey_AppTests.swift; sourceTree = "<group>"; };
+		D66B681F1B76D4E500C80B26 /* SmartKey.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SmartKey.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		D66B68221B76D4E500C80B26 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D66B68231B76D4E500C80B26 /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
+		D66B682E1B76D84800C80B26 /* CustomKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomKey.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D66B67F31B76D4C400C80B26 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D66B68081B76D4C400C80B26 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D66B681C1B76D4E500C80B26 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D66B67ED1B76D4C400C80B26 = {
+			isa = PBXGroup;
+			children = (
+				D66B67F81B76D4C400C80B26 /* SmartKey App */,
+				D66B680E1B76D4C400C80B26 /* SmartKey AppTests */,
+				D66B68201B76D4E500C80B26 /* SmartKey */,
+				D66B67F71B76D4C400C80B26 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D66B67F71B76D4C400C80B26 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D66B67F61B76D4C400C80B26 /* SmartKey App.app */,
+				D66B680B1B76D4C400C80B26 /* SmartKey AppTests.xctest */,
+				D66B681F1B76D4E500C80B26 /* SmartKey.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D66B67F81B76D4C400C80B26 /* SmartKey App */ = {
+			isa = PBXGroup;
+			children = (
+				D66B67FB1B76D4C400C80B26 /* AppDelegate.swift */,
+				D66B67FD1B76D4C400C80B26 /* ViewController.swift */,
+				D66B67FF1B76D4C400C80B26 /* Main.storyboard */,
+				D66B68021B76D4C400C80B26 /* Images.xcassets */,
+				D66B68041B76D4C400C80B26 /* LaunchScreen.xib */,
+				D66B67F91B76D4C400C80B26 /* Supporting Files */,
+			);
+			path = "SmartKey App";
+			sourceTree = "<group>";
+		};
+		D66B67F91B76D4C400C80B26 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D66B67FA1B76D4C400C80B26 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D66B680E1B76D4C400C80B26 /* SmartKey AppTests */ = {
+			isa = PBXGroup;
+			children = (
+				D66B68111B76D4C400C80B26 /* SmartKey_AppTests.swift */,
+				D66B680F1B76D4C400C80B26 /* Supporting Files */,
+			);
+			path = "SmartKey AppTests";
+			sourceTree = "<group>";
+		};
+		D66B680F1B76D4C400C80B26 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D66B68101B76D4C400C80B26 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D66B68201B76D4E500C80B26 /* SmartKey */ = {
+			isa = PBXGroup;
+			children = (
+				D66B68231B76D4E500C80B26 /* KeyboardViewController.swift */,
+				D66B682E1B76D84800C80B26 /* CustomKey.swift */,
+				D66B68211B76D4E500C80B26 /* Supporting Files */,
+			);
+			path = SmartKey;
+			sourceTree = "<group>";
+		};
+		D66B68211B76D4E500C80B26 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D66B68221B76D4E500C80B26 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D66B67F51B76D4C400C80B26 /* SmartKey App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D66B68151B76D4C400C80B26 /* Build configuration list for PBXNativeTarget "SmartKey App" */;
+			buildPhases = (
+				D66B67F21B76D4C400C80B26 /* Sources */,
+				D66B67F31B76D4C400C80B26 /* Frameworks */,
+				D66B67F41B76D4C400C80B26 /* Resources */,
+				D66B682B1B76D4E500C80B26 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D66B68261B76D4E500C80B26 /* PBXTargetDependency */,
+			);
+			name = "SmartKey App";
+			productName = "SmartKey App";
+			productReference = D66B67F61B76D4C400C80B26 /* SmartKey App.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D66B680A1B76D4C400C80B26 /* SmartKey AppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D66B68181B76D4C400C80B26 /* Build configuration list for PBXNativeTarget "SmartKey AppTests" */;
+			buildPhases = (
+				D66B68071B76D4C400C80B26 /* Sources */,
+				D66B68081B76D4C400C80B26 /* Frameworks */,
+				D66B68091B76D4C400C80B26 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D66B680D1B76D4C400C80B26 /* PBXTargetDependency */,
+			);
+			name = "SmartKey AppTests";
+			productName = "SmartKey AppTests";
+			productReference = D66B680B1B76D4C400C80B26 /* SmartKey AppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D66B681E1B76D4E500C80B26 /* SmartKey */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D66B68281B76D4E500C80B26 /* Build configuration list for PBXNativeTarget "SmartKey" */;
+			buildPhases = (
+				D66B681B1B76D4E500C80B26 /* Sources */,
+				D66B681C1B76D4E500C80B26 /* Frameworks */,
+				D66B681D1B76D4E500C80B26 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SmartKey;
+			productName = SmartKey;
+			productReference = D66B681F1B76D4E500C80B26 /* SmartKey.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D66B67EE1B76D4C400C80B26 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+				ORGANIZATIONNAME = "Alex Whitaker";
+				TargetAttributes = {
+					D66B67F51B76D4C400C80B26 = {
+						CreatedOnToolsVersion = 6.4;
+					};
+					D66B680A1B76D4C400C80B26 = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = D66B67F51B76D4C400C80B26;
+					};
+					D66B681E1B76D4E500C80B26 = {
+						CreatedOnToolsVersion = 6.4;
+					};
+				};
+			};
+			buildConfigurationList = D66B67F11B76D4C400C80B26 /* Build configuration list for PBXProject "SmartKey App" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D66B67ED1B76D4C400C80B26;
+			productRefGroup = D66B67F71B76D4C400C80B26 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D66B67F51B76D4C400C80B26 /* SmartKey App */,
+				D66B680A1B76D4C400C80B26 /* SmartKey AppTests */,
+				D66B681E1B76D4E500C80B26 /* SmartKey */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D66B67F41B76D4C400C80B26 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D66B68011B76D4C400C80B26 /* Main.storyboard in Resources */,
+				D66B68061B76D4C400C80B26 /* LaunchScreen.xib in Resources */,
+				D66B68031B76D4C400C80B26 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D66B68091B76D4C400C80B26 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D66B681D1B76D4E500C80B26 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D66B67F21B76D4C400C80B26 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D66B67FE1B76D4C400C80B26 /* ViewController.swift in Sources */,
+				D66B67FC1B76D4C400C80B26 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D66B68071B76D4C400C80B26 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D66B68121B76D4C400C80B26 /* SmartKey_AppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D66B681B1B76D4E500C80B26 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D66B682F1B76D84800C80B26 /* CustomKey.swift in Sources */,
+				D66B68241B76D4E500C80B26 /* KeyboardViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D66B680D1B76D4C400C80B26 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D66B67F51B76D4C400C80B26 /* SmartKey App */;
+			targetProxy = D66B680C1B76D4C400C80B26 /* PBXContainerItemProxy */;
+		};
+		D66B68261B76D4E500C80B26 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D66B681E1B76D4E500C80B26 /* SmartKey */;
+			targetProxy = D66B68251B76D4E500C80B26 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D66B67FF1B76D4C400C80B26 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D66B68001B76D4C400C80B26 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D66B68041B76D4C400C80B26 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D66B68051B76D4C400C80B26 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D66B68131B76D4C400C80B26 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D66B68141B76D4C400C80B26 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D66B68161B76D4C400C80B26 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "SmartKey App/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		D66B68171B76D4C400C80B26 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "SmartKey App/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		D66B68191B76D4C400C80B26 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "SmartKey AppTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SmartKey App.app/SmartKey App";
+			};
+			name = Debug;
+		};
+		D66B681A1B76D4C400C80B26 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "SmartKey AppTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SmartKey App.app/SmartKey App";
+			};
+			name = Release;
+		};
+		D66B68291B76D4E500C80B26 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SmartKey/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		D66B682A1B76D4E500C80B26 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = SmartKey/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D66B67F11B76D4C400C80B26 /* Build configuration list for PBXProject "SmartKey App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D66B68131B76D4C400C80B26 /* Debug */,
+				D66B68141B76D4C400C80B26 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D66B68151B76D4C400C80B26 /* Build configuration list for PBXNativeTarget "SmartKey App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D66B68161B76D4C400C80B26 /* Debug */,
+				D66B68171B76D4C400C80B26 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		D66B68181B76D4C400C80B26 /* Build configuration list for PBXNativeTarget "SmartKey AppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D66B68191B76D4C400C80B26 /* Debug */,
+				D66B681A1B76D4C400C80B26 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		D66B68281B76D4E500C80B26 /* Build configuration list for PBXNativeTarget "SmartKey" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D66B68291B76D4E500C80B26 /* Debug */,
+				D66B682A1B76D4E500C80B26 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D66B67EE1B76D4C400C80B26 /* Project object */;
+}
