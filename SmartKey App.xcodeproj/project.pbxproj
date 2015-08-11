@@ -28,6 +28,7 @@
 		D69921321B77F1720048D907 /* ShiftDownKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69921311B77F1720048D907 /* ShiftDownKey.swift */; };
 		D69921351B780E860048D907 /* BackspaceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69921341B780E860048D907 /* BackspaceKey.swift */; };
 		D69921371B7814BC0048D907 /* Spacer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69921361B7814BC0048D907 /* Spacer.swift */; };
+		D69921391B78F0D80048D907 /* CapsLockKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69921381B78F0D80048D907 /* CapsLockKey.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +89,7 @@
 		D69921311B77F1720048D907 /* ShiftDownKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShiftDownKey.swift; sourceTree = "<group>"; };
 		D69921341B780E860048D907 /* BackspaceKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackspaceKey.swift; sourceTree = "<group>"; };
 		D69921361B7814BC0048D907 /* Spacer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spacer.swift; sourceTree = "<group>"; };
+		D69921381B78F0D80048D907 /* CapsLockKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CapsLockKey.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,6 +198,7 @@
 			children = (
 				D699212F1B77F15C0048D907 /* ShiftUpKey.swift */,
 				D69921311B77F1720048D907 /* ShiftDownKey.swift */,
+				D69921381B78F0D80048D907 /* CapsLockKey.swift */,
 				D69921251B77E8ED0048D907 /* SmartKey.swift */,
 				D69921211B77DC8A0048D907 /* SpaceKey.swift */,
 				D69921271B77EA9D0048D907 /* NextKeyboardKey.swift */,
@@ -371,6 +374,7 @@
 				D69921221B77DC8A0048D907 /* SpaceKey.swift in Sources */,
 				D699212E1B77F0380048D907 /* SwitchToSymbolsKey.swift in Sources */,
 				D66B68241B76D4E500C80B26 /* KeyboardViewController.swift in Sources */,
+				D69921391B78F0D80048D907 /* CapsLockKey.swift in Sources */,
 				D69921301B77F15C0048D907 /* ShiftUpKey.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

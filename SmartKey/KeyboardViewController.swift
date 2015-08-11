@@ -12,7 +12,12 @@ class KeyboardViewController: UIInputViewController {
     
     var currentPageType : PageType = PageType.Uppercase
     var savedAlphabeticState : PageType = PageType.Uppercase
+    
     var capsLock : Bool = false;
+    var recentlyText : Bool = false;
+    
+    var lastShiftTap : NSDate?
+    var lastSpaceBarTap : NSDate?
     
     enum PageType {
         case Lowercase
@@ -20,7 +25,7 @@ class KeyboardViewController: UIInputViewController {
         case Numeric
         case Symbols
     }
-
+    
     override func updateViewConstraints() {
         super.updateViewConstraints()
     
@@ -29,10 +34,14 @@ class KeyboardViewController: UIInputViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        //blue
         //view.backgroundColor = UIColor(red: 32/255, green: 97/255, blue: 161/255, alpha: 255/255)
-        view.backgroundColor = UIColor(red: 191/255, green: 191/255, blue: 191/255, alpha: 255/255)
+        
+        //gray
+        //view.backgroundColor = UIColor(red: 191/255, green: 191/255, blue: 191/255, alpha: 255/255)
 
+        // Sarah color scheme #1 - blue
+        view.backgroundColor = UIColor(red: 82/255, green: 163/255, blue: 204/255, alpha: 255/255)
         
         createKeyboardPage(currentPageType)
     }
@@ -114,10 +123,18 @@ class KeyboardViewController: UIInputViewController {
                 button = BackspaceKey.buttonWithType(.Custom) as! BackspaceKey
                 break
             case "shiftUp":
-                button = ShiftUpKey.buttonWithType(.Custom) as! ShiftUpKey
+                if (capsLock) {
+                    button = CapsLockKey.buttonWithType(.Custom) as! CapsLockKey
+                } else {
+                    button = ShiftUpKey.buttonWithType(.Custom) as! ShiftUpKey
+                }
                 break
             case "shiftDown":
-                button = ShiftDownKey.buttonWithType(.Custom) as! ShiftDownKey
+                if (capsLock) {
+                    button = CapsLockKey.buttonWithType(.Custom) as! CapsLockKey
+                } else {
+                    button = ShiftDownKey.buttonWithType(.Custom) as! ShiftDownKey
+                }
                 break
             case "numeric":
                 button = SwitchToNumericKey.buttonWithType(.Custom) as! SwitchToNumericKey
@@ -149,7 +166,7 @@ class KeyboardViewController: UIInputViewController {
         self.view.addSubview(row)
         addConstraints(buttons, containingView: row)
     }
-        
+    
     
     // Method called when the smart key is pressed
     func smartKeyPressed(sender: AnyObject?) {
@@ -164,7 +181,9 @@ class KeyboardViewController: UIInputViewController {
     
     // Method called when the space bar is pressed
     func spacePressed(sender: AnyObject?) {
-        (textDocumentProxy as! UIKeyInput).insertText(" ")
+        if (!spaceBarTimer()) {
+            (textDocumentProxy as! UIKeyInput).insertText(" ")
+        }
     }
     
     // Method to backspace
@@ -176,12 +195,14 @@ class KeyboardViewController: UIInputViewController {
     func shiftUp(sender: AnyObject?) {
         currentPageType = PageType.Uppercase
         createKeyboardPage(currentPageType)
+        capsLockTimer()
     }
     
     // Method to shift to lowercase
     func shiftDown(sender: AnyObject?) {
         currentPageType = PageType.Lowercase
         createKeyboardPage(currentPageType)
+        capsLockTimer()
     }
     
     // Method called when the button to access the numeric keyboard is accessed
@@ -211,6 +232,8 @@ class KeyboardViewController: UIInputViewController {
         let button = sender as! UIButton
         let title = button.titleForState(.Normal)
         (textDocumentProxy as! UIKeyInput).insertText(title!)
+        
+        recentlyText = true;
         
         if (currentPageType == PageType.Uppercase && !capsLock) {
             currentPageType = PageType.Lowercase
@@ -269,6 +292,51 @@ class KeyboardViewController: UIInputViewController {
             containingView.addConstraints([topConstraint, bottomConstraint, rightConstraint, leftConstraint])
         }
     }
+    
+    
+    func capsLockTimer() {
+        if (capsLock) {
+            capsLock = false;
+            createKeyboardPage(currentPageType)
+        }
+        else {
+            let now = NSDate()
+            if let lastShiftTime = self.lastShiftTap {
+                let timeSinceLastClick = now.timeIntervalSinceDate(lastShiftTime)
+                if (timeSinceLastClick < 0.35) {
+                    capsLock = true
+                    currentPageType = PageType.Uppercase
+                    createKeyboardPage(currentPageType)
+                }
+            }
+        
+            self.lastShiftTap = now
+        }
+    }
+    
+    
+    
+    func spaceBarTimer() -> Bool {
+        var returnVal = false
+        let now = NSDate()
+        if let lastSpaceBar = self.lastSpaceBarTap {
+            let timeSinceLastClick = now.timeIntervalSinceDate(lastSpaceBar)
+            if (timeSinceLastClick < 0.35 && recentlyText) {
+                (textDocumentProxy as! UIKeyInput).deleteBackward()
+                (textDocumentProxy as! UIKeyInput).insertText(". ")
+                
+                currentPageType = PageType.Uppercase
+                createKeyboardPage(currentPageType)
+                
+                recentlyText = false
+                returnVal = true
+            }
+        }
+        
+        self.lastSpaceBarTap = now
+        return returnVal
+    }
+    
     
     
     
