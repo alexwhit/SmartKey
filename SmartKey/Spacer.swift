@@ -14,7 +14,7 @@ class Spacer : CustomKey {
         self.backgroundColor = UIColor(white: 0/255, alpha: 0/255);
     }
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
 }

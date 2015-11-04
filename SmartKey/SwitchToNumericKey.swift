@@ -16,7 +16,7 @@ class SwitchToNumericKey : CustomKey {
         self.action = "switchToNumeric:"
     }
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
 }

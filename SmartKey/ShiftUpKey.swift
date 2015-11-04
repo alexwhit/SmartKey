@@ -16,7 +16,7 @@ class ShiftUpKey : CustomKey {
         self.action = "shiftUp:"
     }
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
 }

@@ -16,7 +16,7 @@ class ShiftDownKey : CustomKey {
         self.action = "shiftDown:"
     }
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
 }

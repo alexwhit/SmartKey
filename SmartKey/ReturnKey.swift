@@ -16,7 +16,7 @@ class ReturnKey : CustomKey {
         self.action = "returnPressed:"
     }
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
 }

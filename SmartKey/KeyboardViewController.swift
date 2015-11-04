@@ -107,48 +107,48 @@ class KeyboardViewController: UIInputViewController {
     
         // For each button title, give it the appropriate functionality
         for title in titles {
-            var button : CustomKey = CustomKey.buttonWithType(.Custom) as! CustomKey
+            var button : CustomKey
             
             switch title {
             case "SP":
-                button = Spacer.buttonWithType(.Custom) as! Spacer
+                button = Spacer(type: .Custom)
                 break
             case "space":
-                button = SpaceKey.buttonWithType(.Custom) as! SpaceKey
+                button = SpaceKey(type: .Custom) 
                 break
             case "return":
-                button = ReturnKey.buttonWithType(.Custom) as! ReturnKey
+                button = ReturnKey(type: .Custom)
                 break
             case "backspace":
-                button = BackspaceKey.buttonWithType(.Custom) as! BackspaceKey
+                button = BackspaceKey(type: .Custom)
                 break
             case "shiftUp":
                 if (capsLock) {
-                    button = CapsLockKey.buttonWithType(.Custom) as! CapsLockKey
+                    button = CapsLockKey(type: .Custom)
                 } else {
-                    button = ShiftUpKey.buttonWithType(.Custom) as! ShiftUpKey
+                    button = ShiftUpKey(type: .Custom)
                 }
                 break
             case "shiftDown":
                 if (capsLock) {
-                    button = CapsLockKey.buttonWithType(.Custom) as! CapsLockKey
+                    button = CapsLockKey(type: .Custom)
                 } else {
-                    button = ShiftDownKey.buttonWithType(.Custom) as! ShiftDownKey
+                    button = ShiftDownKey(type: .Custom)
                 }
                 break
             case "numeric":
-                button = SwitchToNumericKey.buttonWithType(.Custom) as! SwitchToNumericKey
+                button = SwitchToNumericKey(type: .Custom)
                 break
             case "alphabetic":
-                button = SwitchToAlphabeticKey.buttonWithType(.Custom) as! SwitchToAlphabeticKey
+                button = SwitchToAlphabeticKey(type: .Custom)
                 break
             case "symbols":
-                button = SwitchToSymbolsKey.buttonWithType(.Custom) as! SwitchToSymbolsKey
+                button = SwitchToSymbolsKey(type: .Custom)
                 break
             case "nextkeyboard":
-                button = NextKeyboardKey.buttonWithType(.Custom) as! NextKeyboardKey
+                button = NextKeyboardKey(type: .Custom)
             default:
-                button = LetterKey.buttonWithType(.Custom) as! LetterKey
+                button = LetterKey(type: .Custom)
                 button.setTitle(title, forState: .Normal)
                 break
             }
@@ -159,7 +159,7 @@ class KeyboardViewController: UIInputViewController {
         }
         
         // Add the buttons and row of buttons to the keyboard
-        var row = UIView(frame: CGRectMake(CGFloat(3), CGFloat(6 + (53 * (rowNumber - 1))), screenWidth, CGFloat(46)))
+        let row = UIView(frame: CGRectMake(CGFloat(3), CGFloat(6 + (53 * (rowNumber - 1))), screenWidth, CGFloat(46)))
         for button in buttons {
             row.addSubview(button)
         }
@@ -175,20 +175,20 @@ class KeyboardViewController: UIInputViewController {
     
     // Method called when the return key is pressed
     func returnPressed(sender: AnyObject?) {
-        (textDocumentProxy as! UIKeyInput).insertText("\n")
+        (textDocumentProxy as UIKeyInput).insertText("\n")
     }
     
     
     // Method called when the space bar is pressed
     func spacePressed(sender: AnyObject?) {
         if (!spaceBarTimer()) {
-            (textDocumentProxy as! UIKeyInput).insertText(" ")
+            (textDocumentProxy as UIKeyInput).insertText(" ")
         }
     }
     
     // Method to backspace
     func backspace(sender: AnyObject?) {
-        (textDocumentProxy as! UIKeyInput).deleteBackward()
+        (textDocumentProxy as UIKeyInput).deleteBackward()
     }
     
     // Method to shift to uppercase
@@ -231,7 +231,7 @@ class KeyboardViewController: UIInputViewController {
     func letterPressed(sender: AnyObject?) {
         let button = sender as! UIButton
         let title = button.titleForState(.Normal)
-        (textDocumentProxy as! UIKeyInput).insertText(title!)
+        (textDocumentProxy as UIKeyInput).insertText(title!)
         
         recentlyText = true;
         
@@ -245,11 +245,11 @@ class KeyboardViewController: UIInputViewController {
     // Add constraints to layout the buttons on the screen - this could be modularized better
     func addConstraints(buttons: [UIButton], containingView: UIView){
         
-        for (index, button) in enumerate(buttons) {
+        for (index, button) in buttons.enumerate() {
             
-            var topConstraint = NSLayoutConstraint(item: button, attribute: .Top, relatedBy: .Equal, toItem: containingView, attribute: .Top, multiplier: 1.0, constant: 1)
+            let topConstraint = NSLayoutConstraint(item: button, attribute: .Top, relatedBy: .Equal, toItem: containingView, attribute: .Top, multiplier: 1.0, constant: 1)
             
-            var bottomConstraint = NSLayoutConstraint(item: button, attribute: .Bottom, relatedBy: .Equal, toItem: containingView, attribute: .Bottom, multiplier: 1.0, constant: -1)
+            let bottomConstraint = NSLayoutConstraint(item: button, attribute: .Bottom, relatedBy: .Equal, toItem: containingView, attribute: .Bottom, multiplier: 1.0, constant: -1)
             
             var leftConstraint : NSLayoutConstraint!
             
@@ -261,19 +261,19 @@ class KeyboardViewController: UIInputViewController {
                 
                 leftConstraint = NSLayoutConstraint(item: button, attribute: .Left, relatedBy: .Equal, toItem: buttons[index-1], attribute: .Right, multiplier: 1.0, constant: 1)
                 if let obj = button as? Spacer {
-                    var widthConstraint = NSLayoutConstraint(item: buttons[0], attribute: .Width, relatedBy: .Equal, toItem: button, attribute: .Width, multiplier: 10.0, constant: 0)
+                    let widthConstraint = NSLayoutConstraint(item: buttons[0], attribute: .Width, relatedBy: .Equal, toItem: button, attribute: .Width, multiplier: 10.0, constant: 0)
                     containingView.addConstraint(widthConstraint)
                 }
                 else if let obj = button as? SpaceKey {
-                    var widthConstraint = NSLayoutConstraint(item: buttons[0], attribute: .Width, relatedBy: .Equal, toItem: button, attribute: .Width, multiplier: 0.28, constant: 0)
+                    let widthConstraint = NSLayoutConstraint(item: buttons[0], attribute: .Width, relatedBy: .Equal, toItem: button, attribute: .Width, multiplier: 0.28, constant: 0)
                     containingView.addConstraint(widthConstraint)
                 }
                 else if let obj = button as? ReturnKey {
-                    var widthConstraint = NSLayoutConstraint(item: buttons[0], attribute: .Width, relatedBy: .Equal, toItem: button, attribute: .Width, multiplier: 0.55, constant: 0)
+                    let widthConstraint = NSLayoutConstraint(item: buttons[0], attribute: .Width, relatedBy: .Equal, toItem: button, attribute: .Width, multiplier: 0.55, constant: 0)
                     containingView.addConstraint(widthConstraint)
                 }
                 else {
-                    var widthConstraint = NSLayoutConstraint(item: buttons[0], attribute: .Width, relatedBy: .Equal, toItem: button, attribute: .Width, multiplier: 1.0, constant: 0)
+                    let widthConstraint = NSLayoutConstraint(item: buttons[0], attribute: .Width, relatedBy: .Equal, toItem: button, attribute: .Width, multiplier: 1.0, constant: 0)
                     containingView.addConstraint(widthConstraint)
                 }
             }
@@ -322,8 +322,8 @@ class KeyboardViewController: UIInputViewController {
         if let lastSpaceBar = self.lastSpaceBarTap {
             let timeSinceLastClick = now.timeIntervalSinceDate(lastSpaceBar)
             if (timeSinceLastClick < 0.35 && recentlyText) {
-                (textDocumentProxy as! UIKeyInput).deleteBackward()
-                (textDocumentProxy as! UIKeyInput).insertText(". ")
+                (textDocumentProxy as UIKeyInput).deleteBackward()
+                (textDocumentProxy as UIKeyInput).insertText(". ")
                 
                 currentPageType = PageType.Uppercase
                 createKeyboardPage(currentPageType)
@@ -350,15 +350,15 @@ class KeyboardViewController: UIInputViewController {
         // Dispose of any resources that can be recreated
     }
     
-    override func textWillChange(textInput: UITextInput) {
+    override func textWillChange(textInput: UITextInput?) {
         // The app is about to change the document's contents. Perform any preparation here.
     }
     
-    override func textDidChange(textInput: UITextInput) {
+    override func textDidChange(textInput: UITextInput?) {
         // The app has just changed the document's contents, the document context has been updated.
         
         var textColor: UIColor
-        var proxy = self.textDocumentProxy as! UITextDocumentProxy
+        let proxy = self.textDocumentProxy 
         if proxy.keyboardAppearance == UIKeyboardAppearance.Dark {
             textColor = UIColor.whiteColor()
         } else {

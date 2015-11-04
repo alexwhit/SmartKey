@@ -23,11 +23,11 @@ class CustomKey : UIButton {
         self.backgroundColor = UIColor(red: 238/255, green: 246/255, blue: 250/255, alpha: 255/255)
         
         
-        self.setTranslatesAutoresizingMaskIntoConstraints(false)
+        self.translatesAutoresizingMaskIntoConstraints = false
         self.layer.cornerRadius = 5
     }
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
 }
